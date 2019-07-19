@@ -1,0 +1,59 @@
+{
+  "name": "react-todo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@progress/kendo-data-query": "^1.5.1",
+    "@progress/kendo-react-dateinputs": "^3.2.2",
+    "@progress/kendo-react-dropdowns": "^3.2.2",
+    "@progress/kendo-react-grid": "^3.2.2",
+    "@progress/kendo-react-inputs": "^3.2.2",
+    "@progress/kendo-react-intl": "^3.2.2",
+    "@progress/kendo-theme-default": "^4.0.0",
+    "auth0-js": "^9.11.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.4",
+    "styled-components": "^4.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
