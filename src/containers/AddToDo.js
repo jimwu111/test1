@@ -24,7 +24,7 @@ let AddToDo = ({dispatch}) => {
                     ref={node=>{ input = node;}}>
                 </Form.Control>
                 <InputGroup.Append>
-                    <Button type="Submit">Add To-Do</Button>
+                    <Button type="Submit">Add ToDo</Button>
                 </InputGroup.Append>
                 </InputGroup>
 

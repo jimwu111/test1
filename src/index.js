@@ -7,8 +7,17 @@ import toDoApp from './reducers';
 import createSagaMiddleware from 'redux-saga';
 import {loadToDoList} from './actions/index';
 import rootSaga from './sagas';
-import {BrowserRouter} from 'react-router-dom';
+//can't use this for history  -- can't use this
+//import {BrowserRouter} from 'react-router-dom'; 
 
+import {Router} from 'react-router-dom'; 
+
+import { createBrowserHistory   } from 'history';
+
+import {ResponsivePanel} from './components/SidePanel';
+
+
+const history = createBrowserHistory();
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -25,9 +34,9 @@ store.dispatch(loadToDoList())
 //render ()--> provider --> store --> reducers
 render(
     <Provider store={store}>
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>       
+        <Router history={history}>
+        <ResponsivePanel/>
+        </Router>       
     </Provider>,
     document.getElementById("root")
 );

@@ -23,7 +23,7 @@ class App extends Component {
             <Route exact path="/" component={ToDoListContainer}/>
             <Route exact path="/new-item" component={AddToDo}/>
         
-            <Button>Dummy</Button>
+            <Button>Dummy Button</Button>
           </Col>
         </Row>
       </Container>
