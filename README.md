@@ -1,3 +1,9 @@
+install 
+
+npm i react-bootstrap --save
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

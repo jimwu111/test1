@@ -10,16 +10,16 @@ export class ResponsivePanel extends SampleBase {
         super(...arguments);
         this.data = [
             {
-                nodeId: '01', nodeText: 'Installation', iconCss: 'icon-microchip icon',
+                nodeId: '01', nodeText: 'Home', iconCss: 'icon-microchip icon',
             },
             {
-                nodeId: '02', nodeText: 'Deployment', iconCss: 'icon-thumbs-up-alt icon',
+                nodeId: '02', nodeText: 'Org Info', iconCss: 'icon-thumbs-up-alt icon',
             },
             {
-                nodeId: '03', nodeText: 'Quick Start', iconCss: 'icon-docs icon',
+                nodeId: '03', nodeText: 'Suppliers', iconCss: 'icon-docs icon',
             },
             {
-                nodeId: '04', nodeText: 'Components', iconCss: 'icon-th icon',
+                nodeId: '04', nodeText: 'Work Orders', iconCss: 'icon-th icon',
                 nodeChild: [
                     { nodeId: '04-01', nodeText: 'Calendar', iconCss: 'icon-circle-thin icon' },
                     { nodeId: '04-02', nodeText: 'DatePicker', iconCss: 'icon-circle-thin icon' },
@@ -29,26 +29,7 @@ export class ResponsivePanel extends SampleBase {
                     { nodeId: '04-06', nodeText: 'SideBar', iconCss: 'icon-circle-thin icon' }
                 ]
             },
-            {
-                nodeId: '05', nodeText: 'API Reference', iconCss: 'icon-code icon',
-                nodeChild: [
-                    { nodeId: '05-01', nodeText: 'Calendar', iconCss: 'icon-circle-thin icon' },
-                    { nodeId: '05-02', nodeText: 'DatePicker', iconCss: 'icon-circle-thin icon' },
-                    { nodeId: '05-03', nodeText: 'DateTimePicker', iconCss: 'icon-circle-thin icon' },
-                    { nodeId: '05-04', nodeText: 'DateRangePicker', iconCss: 'icon-circle-thin icon' },
-                    { nodeId: '05-05', nodeText: 'TimePicker', iconCss: 'icon-circle-thin icon' },
-                    { nodeId: '05-06', nodeText: 'SideBar', iconCss: 'icon-circle-thin icon' }
-                ]
-            },
-            {
-                nodeId: '06', nodeText: 'Browser Compatibility', iconCss: 'icon-chrome icon'
-            },
-            {
-                nodeId: '07', nodeText: 'Upgrade Packages', iconCss: 'icon-up-hand icon'
-            },
-            {
-                nodeId: '08', nodeText: 'Release Notes', iconCss: 'icon-bookmark-empty icon'
-            },
+          
             {
                 nodeId: '09', nodeText: 'FAQ', iconCss: 'icon-help-circled icon'
             },
@@ -75,7 +56,14 @@ export class ResponsivePanel extends SampleBase {
                         <div className='main-header' id='header-section'>
                             <ul className='header-list'>
                                 <li className='float-left header-style icon-menu' id='hamburger' onClick={this.toggleClick.bind(this)} ref="sidbarToggle"></li>
-                                <li className='float-left header-style nav-pane'><b>Navigation Pane</b></li>
+                                <li className='float-left header-style nav-pane'>
+                                    <img    alt="noImage"
+                                            src="./FT_logo.png"
+                                            width="150"
+                                            height="45"
+                                            className="d-inline-block align-top"
+                                            />
+                                </li>
                                 <li className='header-style float-right support border-left'><b>Support</b></li>
                             </ul>
                         </div>
@@ -83,7 +71,7 @@ export class ResponsivePanel extends SampleBase {
                             <div className='main-menu'>
                                 <div className='table-content'>
                                     <input type='text' placeholder='Search...' className='search-icon'></input>
-                                        <p className='main-menu-header'>TABLE OF CONTENTS</p>
+                                      
                                     </div>
                                     <div>
                                     <TreeViewComponent id='main-treeview' fields={this.fields} expandOn='Click'/>
