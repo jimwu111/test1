@@ -1,9 +1,52 @@
-import { render } from 'react-dom';
+import {Route} from 'react-router-dom';
 import '../index.css';
 import * as React from 'react';
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations';
 import { TreeViewComponent } from '@syncfusion/ej2-react-navigations';
 import { SampleBase } from '../sample-base';
+import AddToDo from '../containers/AddToDo';
+ 
+ 
+//import JsonForm from '../components/SearchBox'
+
+
+/*
+*  1) THe SidebarCompoent, has data jSON, and child has subchild
+*  2) the jsoN goest o a TreeViewComponent - now you need to study that
+*   on how to bring in behavior..
+*  3/ the main-content is the Right pane,  but why the "TAB" in 
+* title does not open is a problem..
+*
+*  4/ Smaple Base is nothing
+*
+*  5/Question - how to trigger conent changeo on main
+*/
+/*
+var icons = `
+    e-icons {
+        color: #00ffff;
+        font-size: 26px;
+    }   
+    .e-search:before {
+        content:'\\e993';
+    }
+    .e-down:before {
+        content: '\\e304';
+    }
+    .e-up:before {
+        content: '\\e306';
+    }`
+ 
+
+const eicons ={
+    color: '#00ffff',
+    fontSize: '26px'
+};
+
+const e-up = {
+    content: '\e306'
+};
+*/
 
 export class ResponsivePanel extends SampleBase {
     constructor() {
@@ -11,9 +54,11 @@ export class ResponsivePanel extends SampleBase {
         this.data = [
             {
                 nodeId: '01', nodeText: 'Home', iconCss: 'icon-microchip icon',
+                navigateUrl: '/jim'
             },
             {
                 nodeId: '02', nodeText: 'Org Info', iconCss: 'icon-thumbs-up-alt icon',
+                navigateUrl: '/jim'
             },
             {
                 nodeId: '03', nodeText: 'Suppliers', iconCss: 'icon-docs icon',
@@ -21,7 +66,8 @@ export class ResponsivePanel extends SampleBase {
             {
                 nodeId: '04', nodeText: 'Work Orders', iconCss: 'icon-th icon',
                 nodeChild: [
-                    { nodeId: '04-01', nodeText: 'Calendar', iconCss: 'icon-circle-thin icon' },
+                    { nodeId: '04-01', nodeText: 'Calendar', 
+                    iconCss: 'icon-circle-thin icon' ,  navigateUrl: '/cnbc'},
                     { nodeId: '04-02', nodeText: 'DatePicker', iconCss: 'icon-circle-thin icon' },
                     { nodeId: '04-03', nodeText: 'DateTimePicker', iconCss: 'icon-circle-thin icon' },
                     { nodeId: '04-04', nodeText: 'DateRangePicker', iconCss: 'icon-circle-thin icon' },
@@ -45,13 +91,13 @@ export class ResponsivePanel extends SampleBase {
     render() {
         return (<div className="control-section">
                 <div className="col-lg-12 col-sm-12 col-md-12 center">
-                    Click/Touch the button to view the sample
+                    BDCDCDCDCDCDCDCD
                  </div>
                 <div className="col-lg-12 col-sm-12 col-md-12 center">
                     <a className="e-btn" id="newTab" target="_blank" onClick={this.newTabClick.bind(this)}>Open in new Tab</a>
                 </div>
                 <div id="wrapper">
-                    <title>Essential JS 2 for React - Sidebar > Sidebar with ListView </title>
+                    <title></title>
                     <div className="col-lg-12 col-sm-12 col-md-12">
                         <div className='main-header' id='header-section'>
                             <ul className='header-list'>
@@ -78,57 +124,21 @@ export class ResponsivePanel extends SampleBase {
                                 </div>
                             </div>
                         </SidebarComponent>
+          
                         <div className="main-content" id="main-text">
-                        <div className='sidebar-content'>
-                <h2 className='sidebar-heading'> Responsive Sidebar With Treeview</h2>
-                <p className='paragraph-content'> This is a graphical aid for visualising and categorising the site, 
-                in the style of an expandable and collapsable treeview component. It auto-expands to display the node(s),
-                 if any, corresponding to the currently viewed title, highlighting that node(s) and its ancestors. 
-                 Load-on-demand when expanding nodes is available where supported (most graphical browsers), falling 
-                 back to a full-page reload. MediaWiki-supported caching, aside from squid, has been considered so 
-                 that unnecessary re-downloads of content are avoided where possible. The complete expanded/collapsed 
-                 state of the treeview persists across page views in most situations.</p>
-                <p className='paragraph-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                    id est laborum.</p>
-                <div className='line'></div>
-                <h2 className='sidebar-heading'>Lorem Ipsum Dolor</h2>
-                <p className='paragraph-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <div className='line'></div>
-                <h2 className='sidebar-heading'> Lorem Ipsum Dolor</h2>
-                <p className='paragraph-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			    <div className='line'></div>
-                <h2 className='sidebar-heading'> Lorem Ipsum Dolor</h2>
-                <p className='paragraph-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div className='line'></div>
-                <h2 className='sidebar-heading'> Lorem Ipsum Dolor</h2>
-                <p className='paragraph-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div className='line'></div>
-                <h2 className='sidebar-heading'> Lorem Ipsum Dolor</h2>
-                <p className='paragraph-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+                            <div className='sidebar-content'>
+                               <h2 className='sidebar-heading'> Responsive Sidebar With Treeview</h2>
+                                <p className='paragraph-content '>
+                                    
+                              
+                                    defualt helps the layout
+                                    <Route exact path="/cnbc" component={AddToDo}/>
+                                    <Route exact path="/jsonform" component={AddToDo}/>
+                                </p>   
+                                <div className='icons'>
+                                      <span className="e-icons e-up"></span>
+                                </div>
+                         </div>
                         </div>
                     </div>
                 </div>

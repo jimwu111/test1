@@ -6,25 +6,29 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
+const schema = {
+    title: "Todo",
+    type: "object",
+    required: ["title"],
+    properties: {
+      title: {type: "string", title: "Title", default: "A new task"},
+      done: {type: "boolean", title: "Done?", default: false}
+    }
+  };
+
+  const log = (type) => console.log.bind(console, type);
+
+export default () =>  ((
+  <Form schema={schema}
+        onChange={log("changed")}
+        onSubmit={log("submitted")}
+        onError={log("errors")} />
+), document.getElementById("app"));
+
+////////
+
 let AddToDo = ({dispatch}) => {
     let input;  
-
-    var icons = `
-.e-search:before {
-    content:'\\e993';
-}
-.e-upload:before {
-    content: '\\e725';
-}
-.e-font:before {
-    content: '\\e34c';
-}
-`
-
-    var iconList = ['e-search', 'e-upload', 'e-font'];
-    const listItems = iconList.map((icon, index) =>
-        <li><span className={`e-icons ${icon}`} key={index}></span></li>
-    );
 
     return (
         <Form onSubmit={e =>{
@@ -46,14 +50,6 @@ let AddToDo = ({dispatch}) => {
                 </InputGroup>
 
             </Form.Group>
-            <div>abcde
-                <style>{icons}</style>
-                <div className="icons">
-                    <ul>
-                        {listItems}
-                    </ul>
-                </div>
-            </div>
 
         </Form>
     );

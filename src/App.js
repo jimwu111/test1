@@ -6,10 +6,8 @@ import Row from 'react-bootstrap/Row';
 import AddToDo from './containers/AddToDo';
 import ToDoListContainer from './containers/ToDoListContainer';
 import {Route} from 'react-router-dom';
-import Navigation from './components/Navigation';
 import NavBar from './components/Navbar';
-
- 
+import DummyIcons from './components/DummyIcon';
 
 class App extends Component {
   
@@ -22,6 +20,7 @@ class App extends Component {
             <NavBar></NavBar>
             <Route exact path="/" component={ToDoListContainer}/>
             <Route exact path="/new-item" component={AddToDo}/>
+            <Route exact path="/jim" component={DummyIcons}/>
         
             <Button>Dummy Button</Button>
           </Col>
