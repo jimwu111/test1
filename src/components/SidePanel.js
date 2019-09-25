@@ -5,6 +5,7 @@ import { SidebarComponent } from '@syncfusion/ej2-react-navigations';
 import { TreeViewComponent } from '@syncfusion/ej2-react-navigations';
 import { SampleBase } from '../sample-base';
 import AddToDo from '../containers/AddToDo';
+import DummyIcons from './DummyIcon';
  
  
 //import JsonForm from '../components/SearchBox'
@@ -54,7 +55,7 @@ export class ResponsivePanel extends SampleBase {
         this.data = [
             {
                 nodeId: '01', nodeText: 'Home', iconCss: 'icon-microchip icon',
-                navigateUrl: '/jim'
+                navigateUrl: '/cnbc'
             },
             {
                 nodeId: '02', nodeText: 'Org Info', iconCss: 'icon-thumbs-up-alt icon',
@@ -134,6 +135,7 @@ export class ResponsivePanel extends SampleBase {
                                     defualt helps the layout
                                     <Route exact path="/cnbc" component={AddToDo}/>
                                     <Route exact path="/jsonform" component={AddToDo}/>
+                                    <Route exact path="/jim" component={DummyIcons}/>
                                 </p>   
                                 <div className='icons'>
                                       <span className="e-icons e-up"></span>

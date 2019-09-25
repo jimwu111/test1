@@ -19,7 +19,7 @@ let AddToDo = ({dispatch}) => {
 .e-font:before {
     content: '\\e34c';
 }
-`
+`;
 
     var iconList = ['e-search', 'e-upload', 'e-font'];
     const listItems = iconList.map((icon, index) =>
@@ -27,6 +27,7 @@ let AddToDo = ({dispatch}) => {
     );
 
     return (
+        <div>
         <Form onSubmit={e =>{
              e.preventDefault();
              if (!input.value.trim()){
@@ -46,16 +47,19 @@ let AddToDo = ({dispatch}) => {
                 </InputGroup>
 
             </Form.Group>
-            <div>abcde
-                <style>{icons}</style>
-                <div className="icons">
-                    <ul>
-                        {listItems}
-                    </ul>
-                </div>
-            </div>
-
+           
         </Form>
+       
+        <div>
+            <div>abcde</div>
+                    <style>{icons}</style>
+            <div className="icons">
+                <ul>
+                    {listItems}
+                </ul>
+            </div>
+       </div>
+       </div>
     );
 };
 
